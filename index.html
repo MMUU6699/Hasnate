@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasanati | حسناتي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      body {
+        font-family: 'Cairo', sans-serif;
+        overscroll-behavior-y: none; /* Prevents pull-to-refresh on mobile */
+      }
+      .font-arabic {
+        font-family: 'Noto Naskh Arabic', serif;
+      }
+      /* Tajweed CSS Rules */
+      .tajweed-rule { font-weight: bold; }
+      .ham_wasl, .slnt, .laam_shamsiyah { color: #aaa; }
+      .madda_normal { color: #537FFF; }
+      .madda_permissible { color: #4050FF; }
+      .madda_necessary { color: #000EBC; }
+      .qlq { color: #DD0008; }
+      .madda_obligatory { color: #FF0000; }
+      .ikhf_shafawi { color: #D500B7; }
+      .ikhf { color: #9400A8; }
+      .idg_shafawi { color: #58B800; }
+      .iqlb { color: #26BFFD; }
+      .idg_ghunnah { color: #169777; }
+      .idg_wo_ghunnah { color: #169777; }
+      .ghn { color: #FF7E1E; }
+    </style>
+    <script>
+      // Insert this script in <head> to avoid FOUC (Flash of Unstyled Content)
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.8.0",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 dark:bg-gray-950">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
