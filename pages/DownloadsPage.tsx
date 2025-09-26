@@ -12,7 +12,8 @@ const DownloadsPage: React.FC = () => {
 
   const tracksByQari = useMemo(() => {
     const grouped: Record<string, DownloadedAudioTrack[]> = {};
-    Object.values(downloadedTracks).forEach(track => {
+    // FIX: Explicitly type `track` to avoid it being inferred as `unknown`.
+    Object.values(downloadedTracks).forEach((track: DownloadedAudioTrack) => {
       if (!grouped[track.qariId]) {
         grouped[track.qariId] = [];
       }
